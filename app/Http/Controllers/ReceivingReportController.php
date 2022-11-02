@@ -24,4 +24,9 @@ class ReceivingReportController extends Controller
     {
         return ReceivingReport::orderBy('receipt_number','desc')->limit(700)->get();
     }
+
+    public function count()
+    {
+        return ReceivingReport::count();
+    }
 }

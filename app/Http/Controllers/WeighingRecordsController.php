@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\WeighingRecords;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class WeighingRecordsController extends Controller
 {
@@ -26,5 +26,10 @@ class WeighingRecordsController extends Controller
         $records->exit_time = $req->exitTime;
         $records->date = $req->date;
         $records->save();
+    }
+
+    public function count()
+    {
+        return WeighingRecords::count();
     }
 }

@@ -32,7 +32,7 @@ Route::controller(PickUpController::class)->group(function () {
     Route::get('/pending1','index');
     Route::post('/postpendingpickup','post');
     Route::post('/deletepickup','destroy');
-   
+    Route::get('/countpending1','count');
 });
 
 Route::controller(CustomerController::class)->group(function () {
@@ -54,11 +54,13 @@ Route::controller(DelController::class)->group(function () {
     Route::get('/pending2','index');
     Route::post('/postpendingdelivery','post');
     Route::post('/deletedelivery','destroy');
+    Route::get('/countpending2','count');
 });
 
 Route::controller(WeighingRecordsController::class)->group(function () {   
     Route::post('/postweighingrecords','post');
     Route::get('/getweighingrecords','index');
+    Route::get('/countweighed','count');
 });
 
 Route::post('/authenticateuser', [LoginController::class, 'search']);
@@ -66,4 +68,5 @@ Route::post('/authenticateuser', [LoginController::class, 'search']);
 Route::controller(ReceivingReportController::class)->group(function () {   
     Route::post('/postreceivingreportrecords','post');
     Route::get('/getreceivingreportrecords','index');
+    Route::get('/countreceived','count');
 });

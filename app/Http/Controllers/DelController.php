@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pending2;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DelController extends Controller
 {
@@ -27,5 +28,10 @@ class DelController extends Controller
     public function destroy(Request $req)
     {
         Pending2::where('plate_no' , $req->plateNo)->delete();
+    }
+
+    public function count()
+    {
+        return Pending2::count();
     }
 }
